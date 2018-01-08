@@ -1,0 +1,498 @@
+EESchema Schematic File Version 2
+LIBS:Control de luces exterior-rescue
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:w_device
+LIBS:w_transistor
+LIBS:w_connectors
+LIBS:w_analog
+LIBS:w_microcontrollers
+LIBS:w_memory
+LIBS:w_rtx
+LIBS:w_logic
+LIBS:w_opto
+LIBS:w_relay
+LIBS:relays
+LIBS:Control de luces exterior-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Control de temperatuera amb Arduino Mega"
+Date "2017-07-08"
+Rev ""
+Comp "EV"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L HEADER_8 J2
+U 1 1 59614461
+P 5000 2950
+F 0 "J2" H 5000 3400 60  0000 C CNN
+F 1 "Analog input" H 5400 2850 60  0000 C CNN
+F 2 "w_pin_strip:pin_socket_8" H 5000 2950 60  0001 C CNN
+F 3 "" H 5000 2950 60  0000 C CNN
+	1    5000 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L HEADER_8 J1
+U 1 1 596144D0
+P 5000 2000
+F 0 "J1" H 5000 2450 60  0000 C CNN
+F 1 "Power" H 5250 1850 60  0000 C CNN
+F 2 "w_pin_strip:pin_socket_8" H 5000 2000 60  0001 C CNN
+F 3 "" H 5000 2000 60  0000 C CNN
+	1    5000 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L HEADER_8 J5
+U 1 1 596145C9
+P 5950 2950
+F 0 "J5" H 5950 3400 60  0000 C CNN
+F 1 "Digital/PWM 1" H 6400 3150 60  0000 C CNN
+F 2 "w_pin_strip:pin_socket_8" H 5950 2950 60  0001 C CNN
+F 3 "" H 5950 2950 60  0000 C CNN
+	1    5950 2950
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GND #PWR01
+U 1 1 59620842
+P 4800 2450
+F 0 "#PWR01" H 4800 2450 30  0001 C CNN
+F 1 "GND" H 4800 2380 30  0001 C CNN
+F 2 "" H 4800 2450 60  0001 C CNN
+F 3 "" H 4800 2450 60  0001 C CNN
+	1    4800 2450
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 2150 4800 2150
+Wire Wire Line
+	4800 2150 4800 2450
+Wire Wire Line
+	4900 2250 4800 2250
+Connection ~ 4800 2250
+NoConn ~ 4900 2350
+NoConn ~ 4900 1950
+NoConn ~ 4900 1850
+NoConn ~ 4900 1750
+NoConn ~ 4900 1650
+$Comp
+L NodeMCU_ESP12E U1
+U 1 1 596264A0
+P 3600 4450
+F 0 "U1" H 5050 4600 60  0000 C CNN
+F 1 "NodeMCU_ESP12E" H 4250 2900 60  0000 C CNN
+F 2 "w_details:NodeMCUESP12ELoLin" H 4550 2950 60  0001 C CNN
+F 3 "" H 4550 2950 60  0001 C CNN
+	1    3600 4450
+	1    0    0    -1  
+$EndComp
+NoConn ~ 6050 3300
+NoConn ~ 6050 3200
+$Comp
+L HEADER_8 J6
+U 1 1 59626CAE
+P 5950 3900
+F 0 "J6" H 5950 4350 60  0000 C CNN
+F 1 "Comunicació" H 6350 4250 60  0000 C CNN
+F 2 "w_pin_strip:pin_socket_8" H 5950 3900 60  0001 C CNN
+F 3 "" H 5950 3900 60  0000 C CNN
+	1    5950 3900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GND #PWR02
+U 1 1 59626D8A
+P 3450 5950
+F 0 "#PWR02" H 3450 5950 30  0001 C CNN
+F 1 "GND" H 3450 5880 30  0001 C CNN
+F 2 "" H 3450 5950 60  0001 C CNN
+F 3 "" H 3450 5950 60  0001 C CNN
+	1    3450 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR03
+U 1 1 59626DC8
+P 5500 5100
+F 0 "#PWR03" H 5500 5100 30  0001 C CNN
+F 1 "GND" H 5500 5030 30  0001 C CNN
+F 2 "" H 5500 5100 60  0001 C CNN
+F 3 "" H 5500 5100 60  0001 C CNN
+	1    5500 5100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 5050 5500 5050
+Wire Wire Line
+	5500 5050 5500 5100
+Wire Wire Line
+	3600 5350 3450 5350
+Wire Wire Line
+	3450 5350 3450 5950
+Wire Wire Line
+	3600 5750 3450 5750
+Connection ~ 3450 5750
+Wire Wire Line
+	3600 5850 3500 5850
+Wire Wire Line
+	3500 5850 3500 4350
+Text GLabel 6250 4050 2    60   Input ~ 0
+Rx1
+Text GLabel 6800 5650 2    60   Input ~ 0
+Rx1
+Text GLabel 6250 3950 2    60   Input ~ 0
+Tx1
+Text GLabel 6800 5550 2    60   Input ~ 0
+Tx1
+Wire Wire Line
+	6050 3950 6250 3950
+Wire Wire Line
+	6050 4050 6250 4050
+Wire Wire Line
+	5750 5550 6400 5550
+NoConn ~ 5400 5450
+NoConn ~ 5400 5350
+NoConn ~ 5400 5250
+NoConn ~ 5400 5150
+NoConn ~ 5400 4950
+NoConn ~ 5400 4850
+NoConn ~ 5400 4750
+NoConn ~ 5400 4650
+NoConn ~ 5400 4550
+NoConn ~ 5400 4450
+NoConn ~ 3600 4450
+NoConn ~ 3600 4550
+NoConn ~ 3600 4650
+NoConn ~ 3600 4750
+NoConn ~ 3600 4850
+NoConn ~ 3600 4950
+NoConn ~ 3600 5050
+NoConn ~ 3600 5150
+NoConn ~ 3600 5250
+NoConn ~ 3600 5450
+NoConn ~ 3600 5550
+NoConn ~ 3600 5650
+NoConn ~ 5400 5850
+NoConn ~ 6050 3850
+NoConn ~ 6050 3750
+NoConn ~ 6050 3650
+NoConn ~ 6050 3550
+$Comp
+L R-RESCUE-Control_de_temperatura_Mega R1
+U 1 1 59633689
+P 6550 5550
+F 0 "R1" V 6450 5500 50  0000 C CNN
+F 1 "470" V 6550 5550 50  0000 C CNN
+F 2 "w_pth_resistors:RC05" V 6480 5550 50  0001 C CNN
+F 3 "" H 6550 5550 50  0001 C CNN
+	1    6550 5550
+	0    1    1    0   
+$EndComp
+NoConn ~ 4900 2600
+NoConn ~ 4900 2700
+NoConn ~ 4900 2800
+NoConn ~ 4900 2900
+NoConn ~ 4900 3000
+NoConn ~ 4900 3100
+NoConn ~ 4900 3200
+NoConn ~ 4900 3300
+NoConn ~ 6050 3100
+NoConn ~ 6050 3000
+NoConn ~ 6050 2900
+NoConn ~ 6050 2800
+NoConn ~ 6050 2700
+NoConn ~ 6050 2600
+NoConn ~ 6050 2350
+NoConn ~ 6050 2250
+NoConn ~ 6050 2150
+NoConn ~ 6050 2050
+NoConn ~ 6050 1950
+NoConn ~ 6050 1850
+NoConn ~ 6050 1750
+NoConn ~ 6050 1650
+$Comp
+L VDD #PWR04
+U 1 1 596388E6
+P 4800 2000
+F 0 "#PWR04" H 4800 2100 30  0001 C CNN
+F 1 "VDD" H 4800 2110 30  0000 C CNN
+F 2 "" H 4800 2000 60  0001 C CNN
+F 3 "" H 4800 2000 60  0001 C CNN
+	1    4800 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L VDD #PWR05
+U 1 1 59638A10
+P 3500 4350
+F 0 "#PWR05" H 3500 4450 30  0001 C CNN
+F 1 "VDD" H 3500 4460 30  0000 C CNN
+F 2 "" H 3500 4350 60  0001 C CNN
+F 3 "" H 3500 4350 60  0001 C CNN
+	1    3500 4350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 2050 4800 2050
+Wire Wire Line
+	4800 2050 4800 2000
+Text Label 6050 5550 0    60   ~ 0
+RxD0
+Text Label 6050 5650 0    60   ~ 0
+TxD0
+$Comp
+L DS1307 U2
+U 1 1 596E0D4D
+P 7650 3050
+F 0 "U2" H 8250 3650 60  0000 C CNN
+F 1 "DS1307" H 8150 3000 60  0000 C CNN
+F 2 "w_pth_circuits:dil_8-300_socket" H 7650 3050 60  0001 C CNN
+F 3 "" H 7650 3050 60  0001 C CNN
+	1    7650 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR06
+U 1 1 596E0FB4
+P 7950 3350
+F 0 "#PWR06" H 7950 3350 30  0001 C CNN
+F 1 "GND" H 7950 3280 30  0001 C CNN
+F 2 "" H 7950 3350 60  0001 C CNN
+F 3 "" H 7950 3350 60  0001 C CNN
+	1    7950 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L R-RESCUE-Control_de_temperatura_Mega R3
+U 1 1 596E12F7
+P 7350 2500
+F 0 "R3" H 7450 2450 50  0000 C CNN
+F 1 "4K7" H 7450 2550 50  0000 C CNN
+F 2 "w_pth_resistors:RC05" V 7280 2500 50  0001 C CNN
+F 3 "" H 7350 2500 50  0001 C CNN
+	1    7350 2500
+	-1   0    0    1   
+$EndComp
+$Comp
+L R-RESCUE-Control_de_temperatura_Mega R2
+U 1 1 596E1375
+P 7100 2500
+F 0 "R2" H 7000 2550 50  0000 C CNN
+F 1 "4K7" H 7000 2450 50  0000 C CNN
+F 2 "w_pth_resistors:RC05" V 7030 2500 50  0001 C CNN
+F 3 "" H 7100 2500 50  0001 C CNN
+	1    7100 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Crystal Y1
+U 1 1 596E1758
+P 7800 2100
+F 0 "Y1" H 7800 2250 50  0000 C CNN
+F 1 "32768" H 7800 1950 50  0000 C CNN
+F 2 "Crystals:Crystal_AT310_d3.0mm_l10.0mm_Horizontal" H 7800 2100 50  0001 C CNN
+F 3 "" H 7800 2100 50  0001 C CNN
+	1    7800 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L BAT-RESCUE-Control_de_temperatura_Mega BAT1
+U 1 1 596E17D1
+P 8550 3150
+F 0 "BAT1" H 8695 3180 50  0000 C CNN
+F 1 "CR2025 3V" H 8800 3100 50  0000 C CNN
+F 2 "w_battery_holders:keystone_103" H 8550 3150 60  0001 C CNN
+F 3 "" H 8550 3150 60  0000 C CNN
+	1    8550 3150
+	1    0    0    -1  
+$EndComp
+Text GLabel 6900 2950 0    60   Input ~ 0
+SDA
+Text GLabel 6900 2750 0    60   Input ~ 0
+SCL
+Wire Wire Line
+	7100 2250 7100 2350
+Wire Wire Line
+	7350 2350 7350 2300
+Wire Wire Line
+	7350 2300 7100 2300
+Connection ~ 7100 2300
+Wire Wire Line
+	6900 2950 7450 2950
+Wire Wire Line
+	7350 2650 7350 2950
+Connection ~ 7350 2950
+Wire Wire Line
+	8100 2250 8100 2300
+Wire Wire Line
+	7950 3150 7950 3350
+Wire Wire Line
+	8550 3250 8550 3300
+Wire Wire Line
+	8550 3300 7950 3300
+Connection ~ 7950 3300
+Wire Wire Line
+	8500 2950 8550 2950
+Wire Wire Line
+	8550 2950 8550 3050
+Wire Wire Line
+	7850 2400 8000 2400
+Wire Wire Line
+	8000 2400 8000 2100
+Wire Wire Line
+	8000 2100 7950 2100
+Wire Wire Line
+	7750 2400 7600 2400
+Wire Wire Line
+	7600 2400 7600 2100
+Wire Wire Line
+	7600 2100 7650 2100
+Text GLabel 6250 1550 2    60   Input ~ 0
+SDA
+Text GLabel 6250 1450 2    60   Input ~ 0
+SCL
+Wire Wire Line
+	6900 2750 7450 2750
+Wire Wire Line
+	7100 2650 7100 2750
+Connection ~ 7100 2750
+NoConn ~ 8500 2750
+$Comp
+L HEADER_10 J4
+U 1 1 59614694
+P 5950 1900
+F 0 "J4" H 5950 2450 60  0000 C CNN
+F 1 "Digital/PWM 2" H 6400 1950 60  0000 C CNN
+F 2 "w_pin_strip:pin_socket_10" H 5950 1900 60  0001 C CNN
+F 3 "" H 5950 1900 60  0000 C CNN
+	1    5950 1900
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 1450 6250 1450
+Wire Wire Line
+	6050 1550 6250 1550
+$Comp
+L VDD #PWR07
+U 1 1 596F2819
+P 7100 2250
+F 0 "#PWR07" H 7100 2350 30  0001 C CNN
+F 1 "VDD" H 7100 2360 30  0000 C CNN
+F 2 "" H 7100 2250 60  0001 C CNN
+F 3 "" H 7100 2250 60  0001 C CNN
+	1    7100 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L VDD #PWR08
+U 1 1 596F29D8
+P 8100 2250
+F 0 "#PWR08" H 8100 2350 30  0001 C CNN
+F 1 "VDD" H 8100 2360 30  0000 C CNN
+F 2 "" H 8100 2250 60  0001 C CNN
+F 3 "" H 8100 2250 60  0001 C CNN
+	1    8100 2250
+	1    0    0    -1  
+$EndComp
+NoConn ~ 6050 4150
+NoConn ~ 6050 4250
+$Comp
+L GND #PWR09
+U 1 1 59C4CFA6
+P 6300 5950
+F 0 "#PWR09" H 6300 5950 30  0001 C CNN
+F 1 "GND" H 6300 5880 30  0001 C CNN
+F 2 "" H 6300 5950 60  0001 C CNN
+F 3 "" H 6300 5950 60  0001 C CNN
+	1    6300 5950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6300 5900 6300 5950
+Wire Wire Line
+	6300 5650 6300 5750
+Connection ~ 6300 5650
+$Comp
+L DIODE-RESCUE-Control_de_temperatura_Mega D1
+U 1 1 59C65AF1
+P 6300 5850
+F 0 "D1" V 6400 5800 40  0000 C CNN
+F 1 "1N4007" V 6300 5700 40  0000 C CNN
+F 2 "w_pth_diodes:diode_do35" H 6300 5850 60  0001 C CNN
+F 3 "" H 6300 5850 60  0000 C CNN
+	1    6300 5850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L HEADER_4 J3
+U 1 1 59C6A16D
+P 5800 6050
+F 0 "J3" V 5800 6300 60  0000 C CNN
+F 1 "Desconnexió Serial" V 5950 6050 60  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x04_Pitch2.54mm" H 5800 6050 60  0001 C CNN
+F 3 "" H 5800 6050 60  0000 C CNN
+	1    5800 6050
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	6700 5550 6800 5550
+Wire Wire Line
+	5950 5650 6800 5650
+Wire Wire Line
+	5950 5950 5950 5650
+Wire Wire Line
+	5400 5650 5850 5650
+Wire Wire Line
+	5850 5650 5850 5950
+Wire Wire Line
+	5650 5550 5400 5550
+NoConn ~ 5400 5750
+Wire Wire Line
+	5650 5950 5650 5850
+Wire Wire Line
+	5650 5850 5750 5750
+Wire Wire Line
+	5750 5750 5750 5550
+Wire Wire Line
+	5750 5950 5750 5850
+Wire Wire Line
+	5750 5850 5650 5750
+Wire Wire Line
+	5650 5750 5650 5550
+$EndSCHEMATC
